@@ -1,5 +1,20 @@
 <resources>
     <string name="app_name">Basic</string>
-    <string name="should_check">You should check Term of Use before enter Main screen</string>
-    <string name="term"><u>Term of Use</u></string>
+    <string name="alert_should_check">You should check Term of Use before enter Main screen</string>
+    <string name="title_term"><u>Term of Use</u></string>
+    <string name="term_of_user">In user-centered design, personas are created to represent the types of users.
+        It is sometimes specified for each persona\n which types of user interfaces it is comfortable with
+        (due to previous experience or the interface\'s inherent simplicity),
+        and what technical expertise and degree of\n knowledge it has in specific fields or disciplines.
+        When few constraints are imposed on the end-user\n category, especially when designing programs for use
+        by the general public, it is common practice to \nexpect minimal technical expertise or previous training in end users.\n
+        Originally used in reference to human-computer interactions - and still largely associated with those disciplines -
+        the term is now used to refer to any specific human-design interaction, ranging from a digital device, to a sales process,
+        to an entire conference. Perhaps due to its organic development and lack of formalization, "User Experience" may be
+        defined by, and the responsibility of, very different departments from organization to organization: in some
+        organizations, it is owned by marketing; in others, it falls under information technology (IT). Then, from a
+        solutions perspective, some organizations base their "User Experiences" around the research and academic-based
+        approaches of human-computer interaction (HCI); others treat interface and/or product design as the source for
+        "User Experience," while still others let marketing or IT drive it.
+    </string>
 </resources>

@@ -1,6 +1,8 @@
 package com.mor.trieuvd.basic
 
+import android.app.Dialog
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.CheckBox
 import androidx.appcompat.app.AppCompatActivity
@@ -26,6 +28,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun main() {
-        
+        cl_agree.setOnClickListener {
+            var dialog = TermDialog(this)
+            dialog.show()
+        }
     }
 }

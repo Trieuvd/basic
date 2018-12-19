@@ -11,7 +11,7 @@
     <TextView
             android:id="@+id/tv_shouldCheck"
             android:textColor="#ff6200"
-            android:text="@string/should_check"
+            android:text="@string/alert_should_check"
             android:padding="20dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -46,7 +46,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginLeft="2dp"
                 android:textColor="#000000"
-                android:text="@string/term"
+                android:text="@string/title_term"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 

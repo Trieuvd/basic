@@ -15,7 +15,7 @@ class SplashActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Fresco.initialize(this)
+        //Fresco.initialize(this)
         setContentView(R.layout.activity_splash)
         initUI()
         main()
@@ -31,7 +31,7 @@ class SplashActivity : AppCompatActivity() {
             .setUri("https://i.imgur.com/qKmIi5r.gif")
             .setAutoPlayAnimations(true)
             .build()
-        draweeView.setController(controller)
+        draweeView.controller = controller
         //chuyen activity
         var thread : Thread = Thread(Runnable {
             Thread.sleep(5000)
