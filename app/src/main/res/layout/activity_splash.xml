@@ -6,7 +6,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#ffffff"
-        tools:context=".SplashActivity">
+        tools:context=".uis.splash.SplashActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
             app:layout_constraintTop_toTopOf="parent"
@@ -16,19 +16,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
         <com.facebook.drawee.view.SimpleDraweeView
-                android:id="@+id/sdv_gif"
+                android:id="@+id/sdvGif"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_width="150dp"
                 android:layout_height="200dp"/>
 
         <TextView
-                android:id="@+id/tv_basic"
+                android:id="@+id/tvBasic"
                 android:textSize="20dp"
                 android:textStyle="bold"
                 android:text="BASIC PROJECT"
                 android:textColor="#0084ff"
-                app:layout_constraintTop_toBottomOf="@+id/sdv_gif"
+                app:layout_constraintTop_toBottomOf="@+id/sdvGif"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
 

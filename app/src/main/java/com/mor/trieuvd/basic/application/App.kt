@@ -1,4 +1,4 @@
-package com.mor.trieuvd.basic
+package com.mor.trieuvd.basic.application
 
 import android.app.Application
 import com.facebook.drawee.backends.pipeline.Fresco

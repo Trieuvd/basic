@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".uis.termofuse.TermOfUseActivity">
+
+    <TextView
+            android:id="@+id/tvShouldCheck"
+            android:textColor="#ff6200"
+            android:text="@string/alert_should_check"
+            android:padding="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clAgree"
+            app:layout_constraintTop_toBottomOf="@+id/tvShouldCheck"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <CheckBox
+                android:id="@+id/cbAgree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:id="@+id/tv_Im"
+                app:layout_constraintStart_toEndOf="@id/cbAgree"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginLeft="15dp"
+                android:textColor="#000000"
+                android:text="I'm agree with "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+        />
+        <TextView
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/tv_Im"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginLeft="2dp"
+                android:textColor="#000000"
+                android:text="@string/title_term"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+            android:id="@+id/btnEnter"
+            android:text="Enter"
+            android:background="#2a89f5"
+            android:textColor="#ffffff"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/clAgree"
+            android:layout_marginTop="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
