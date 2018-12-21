@@ -35,7 +35,7 @@ class TermDialog(context: Context) : Dialog(context), View.OnClickListener {
         //set full screen dialog
         var window = window
         window.setLayout(ConstraintLayout.LayoutParams.MATCH_PARENT, ConstraintLayout.LayoutParams.MATCH_PARENT)
-
+        //set event scroll the bottom
         tvAgree.isEnabled = false
         svContentTerm.viewTreeObserver.addOnScrollChangedListener {
             if (svContentTerm.getChildAt(0).bottom
