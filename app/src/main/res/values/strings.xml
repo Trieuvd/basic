@@ -1,11 +1,16 @@
 <resources>
     <string name="app_name">Basic</string>
+    <!--activity_splash-->
+    <string name="tvBasic_text">BASIC PROJECT</string>
+    <!--activity_term_of_use-->
     <string name="alert_should_check">You should check Term of Use before enter Main screen</string>
     <string name="title_term">
         <u>Term of Use</u>
     </string>
-
+    <!--activity_main-->
     <string name="title_home">Home</string>
+    <!--dialog_term-->
+    <string name="tvAgree_text">Agree</string>
     <string name="term_of_user">In user-centered design, personas are created to represent the types of users.
         It is sometimes specified for each persona\n which types of user interfaces it is comfortable with
         (due to previous experience or the interface\'s inherent simplicity),

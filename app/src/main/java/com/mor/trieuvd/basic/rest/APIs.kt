@@ -6,5 +6,5 @@ import retrofit2.http.GET
 
 interface APIs {
     @get:GET("users/octocat")
-    val user: Call<User>
+    val getUser: Call<User>
 }

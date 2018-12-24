@@ -7,7 +7,7 @@ object RestClient {
     val BASE_API = "https://api.github.com/"
     var retrofit: Retrofit? = null
 
-    val restClient: APIs
+    val restClient: Retrofit
         get() {
             if (retrofit == null) {
                 retrofit = Retrofit.Builder()
@@ -15,6 +15,6 @@ object RestClient {
                     .addConverterFactory(GsonConverterFactory.create())
                     .build()
             }
-            return retrofit!!.create(APIs::class.java)
+            return retrofit!!
         }
 }

@@ -14,37 +14,37 @@
             android:minHeight="?attr/actionBarSize"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
     </androidx.appcompat.widget.Toolbar>
 
     <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/sdvAvatar"
             app:placeholderImage="@mipmap/ic_launcher"
             app:layout_constraintTop_toBottomOf="@+id/toobar"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/spacing_normal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_width="130dp"
-            android:layout_height="130dp"
+            android:padding="@dimen/spacing_normal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             app:roundAsCircle="true"
     />
 
     <TextView
             android:id="@+id/tvName"
-            android:textSize="20sp"
+            android:textSize="@dimen/font_normal"
             android:textStyle="bold"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/spacing_normal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/sdvAvatar"
-            android:textColor="#06930b"
+            android:textColor="@color/green_bright"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
     <TextView
             android:id="@+id/tvType"
-            android:textSize="15dp"
-            android:layout_marginTop="20dp"
+            android:textSize="@dimen/font_small"
+            android:layout_marginTop="@dimen/spacing_normal"
             app:layout_constraintTop_toBottomOf="@+id/tvName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -53,8 +53,8 @@
 
     <TextView
             android:id="@+id/tvLocation"
-            android:textSize="15dp"
-            android:layout_marginTop="20dp"
+            android:textSize="@dimen/font_small"
+            android:layout_marginTop="@dimen/spacing_normal"
             app:layout_constraintTop_toBottomOf="@+id/tvType"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -63,7 +63,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clListInfo"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="@dimen/spacing_normal"
             app:layout_constraintTop_toBottomOf="@+id/tvLocation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -76,8 +76,8 @@
             <ImageView
                     android:id="@+id/icRepos"
                     android:src="@drawable/ic_repos"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
             <TextView
                     android:id="@+id/tvIndexRepos"
                     android:textColor="@color/colorIndexInfo"
@@ -97,8 +97,8 @@
             <ImageView
                     android:id="@+id/icGithub"
                     android:src="@drawable/ic_github"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"/>
+                    android:layout_width="@dimen/icon_width"
+                    android:layout_height="@dimen/icon_height"/>
             <TextView
                     android:id="@+id/tvIndexGithub"
                     android:textColor="@color/colorIndexInfo"
@@ -118,8 +118,8 @@
             <ImageView
                     android:id="@+id/icFollower"
                     android:src="@drawable/ic_follower"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"/>
+                    android:layout_width="@dimen/icon_width"
+                    android:layout_height="@dimen/icon_height"/>
             <TextView
                     android:id="@+id/tvIndexFllower"
                     android:textColor="@color/colorIndexInfo"
@@ -139,8 +139,8 @@
             <ImageView
                     android:id="@+id/icFollowing"
                     android:src="@drawable/ic_following"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"/>
+                    android:layout_width="@dimen/ic_height"
+                    android:layout_height="@dimen/ic_height"/>
             <TextView
                     android:id="@+id/tvIndexFllowing"
                     android:textColor="@color/colorIndexInfo"
@@ -155,7 +155,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_margin="20dp"
+            android:layout_margin="@dimen/main_marginTop"
             android:background="#000000"
             app:layout_constraintTop_toBottomOf="@+id/clListInfo"
             android:layout_width="match_parent"

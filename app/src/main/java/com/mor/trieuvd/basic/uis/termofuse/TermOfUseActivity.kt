@@ -3,11 +3,8 @@ package com.mor.trieuvd.basic.uis.termofuse
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.CheckBox
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.constraintlayout.widget.ConstraintLayout
 import com.mor.trieuvd.basic.R
 import com.mor.trieuvd.basic.Utils.TermBus
 import com.mor.trieuvd.basic.uis.widgets.TermDialog
