@@ -24,6 +24,8 @@
         </activity>
         <activity android:name=".uis.main.MainActivity">
         </activity>
+        <activity android:name="com.mor.trieuvd.basic.uis.followers.FollowersActivity">
+        </activity>
     </application>
 
 </manifest>

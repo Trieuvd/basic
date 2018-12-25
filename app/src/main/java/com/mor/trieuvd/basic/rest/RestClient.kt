@@ -4,7 +4,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RestClient {
-    val BASE_API = "https://api.github.com/"
+    val BASE_API = "https://api.github.com/users/"
     var retrofit: Retrofit? = null
 
     val restClient: Retrofit

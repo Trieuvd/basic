@@ -1,29 +1,30 @@
 package com.mor.trieuvd.basic.uis.main
 
+import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import retrofit2.Callback
 
 import com.mor.trieuvd.basic.R
 import com.mor.trieuvd.basic.model.User
 import com.mor.trieuvd.basic.rest.APIs
 import com.mor.trieuvd.basic.rest.RestClient
+import com.mor.trieuvd.basic.uis.base.BaseActivity
+import com.mor.trieuvd.basic.uis.followers.FollowersActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Response
 
-class MainActivity : AppCompatActivity() {
-
-    private var user: User? = null
+class MainActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         customToolbar()
         getData()
-
     }
 
     private fun customToolbar() {
@@ -36,10 +37,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
-    }
 
     private fun getData() {
             val call = RestClient.restClient.create(APIs::class.java).getUser
@@ -49,14 +46,14 @@ class MainActivity : AppCompatActivity() {
                 }
                 override fun onResponse(call: Call<User>, response: Response<User>) {
                     Log.e("CHECKDATA", "thanh cong")
-                    user = response.body()
-                    initUI()
+                    val user = response.body()
+                    initUI(user)
                 }
             })
     }
 
 
-    private fun initUI() {
+    private fun initUI(user: User?) {
         //set avatar
         user?.let {
             sdvAvatar.setImageURI(Uri.parse(user?.avatarUrl), this)
@@ -67,6 +64,10 @@ class MainActivity : AppCompatActivity() {
             tvIndexGithub.text = user?.publicGists.toString()
             tvIndexFllower.text = user?.followers.toString()
             tvIndexFllowing.text = user?.following.toString()
+        }
+        btShowAllFollowers.setOnClickListener {
+            intent = Intent(this, FollowersActivity::class.java)
+            startActivity(intent)
         }
 
 

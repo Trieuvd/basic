@@ -155,6 +155,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clLine"
             android:layout_margin="@dimen/spacing_normal"
             android:background="#000000"
             app:layout_constraintTop_toBottomOf="@+id/clListInfo"
@@ -162,5 +163,19 @@
             android:layout_height="1dp">
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+            android:id="@+id/btShowAllFollowers"
+            android:text="Show All Followers"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:padding="@dimen/spacing_small"
+            android:layout_marginTop="@dimen/spacing_small"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clLine"
+            android:background="@color/blue_bright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
