@@ -58,14 +58,17 @@ class MainActivity : AppCompatActivity() {
 
     private fun initUI() {
         //set avatar
-        sdvAvatar.setImageURI(Uri.parse(user?.avatarUrl), this)
-        tvName.text = user?.name
-        tvType.text = user?.type
-        tvLocation.text = user?.location
-        tvIndexRepos.text = user?.publicRepos.toString()
-        tvIndexGithub.text = user?.publicGists.toString()
-        tvIndexFllower.text = user?.followers.toString()
-        tvIndexFllowing.text = user?.following.toString()
+        user?.let {
+            sdvAvatar.setImageURI(Uri.parse(user?.avatarUrl), this)
+            tvName.text = user?.name
+            tvType.text = user?.type
+            tvLocation.text = user?.location
+            tvIndexRepos.text = user?.publicRepos.toString()
+            tvIndexGithub.text = user?.publicGists.toString()
+            tvIndexFllower.text = user?.followers.toString()
+            tvIndexFllowing.text = user?.following.toString()
+        }
+
 
     }
 }

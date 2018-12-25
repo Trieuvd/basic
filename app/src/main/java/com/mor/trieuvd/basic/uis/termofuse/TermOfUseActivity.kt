@@ -60,9 +60,6 @@ class TermOfUseActivity : AppCompatActivity(), View.OnClickListener {
         event?.let {
             cbAgree.isChecked = event.checked
         }
-        /*if (event == Utils.RESULT_OK) {
-            cb_agree.isChecked = true
-        }*/
     }
 
 

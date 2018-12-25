@@ -7,10 +7,10 @@
     <TextView
             android:id="@+id/tvTitleTerm"
             android:text="@string/title_term"
-            android:textSize="@dimen/tvTitleTerm_textSize"
+            android:textSize="@dimen/font_large"
             android:textStyle="bold"
-            android:padding="@dimen/tvTitleTerm_padding"
-            android:textColor="@color/tvTitleTerm"
+            android:padding="@dimen/spacing_tiny"
+            android:textColor="@color/green_bright"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
     <ScrollView
@@ -18,7 +18,7 @@
             app:layout_constrainedHeight="true"
             app:layout_constraintTop_toBottomOf="@+id/tvTitleTerm"
             app:layout_constraintBottom_toTopOf="@+id/tvAgree"
-            android:padding="@dimen/svContentTerm_padding"
+            android:padding="@dimen/spacing_tiny"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,8 +27,8 @@
             <TextView
                     android:id="@+id/tvContentTerm"
                     android:text="@string/term_of_user"
-                    android:textSize="@dimen/tvContentTerm_textSize"
-                    android:textColor="@color/tvContentTerm_textColor"
+                    android:textSize="@dimen/font_normal"
+                    android:textColor="@color/black"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -36,10 +36,10 @@
     <TextView
             android:id="@+id/tvAgree"
             android:text="@string/tvAgree_text"
-            android:textSize="@dimen/tvAgree_textSize"
+            android:textSize="@dimen/font_small"
             android:textStyle="bold"
-            android:textColor="@color/tvAgree_textColor"
-            android:padding="@dimen/tvAgree_padding"
+            android:textColor="@color/black"
+            android:padding="@dimen/spacing_small"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:layout_width="wrap_content"

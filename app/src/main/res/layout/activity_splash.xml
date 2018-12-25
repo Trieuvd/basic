@@ -8,32 +8,25 @@
         android:background="@color/white"
         tools:context=".uis.splash.SplashActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/sdvGif"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"/>
+    <TextView
+            android:id="@+id/tvBasic"
+            android:textSize="@dimen/font_large"
+            android:textStyle="bold"
+            android:text="@string/tvBasic_text"
+            android:textColor="@color/blue_bright"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/spacing_normal"
+            app:layout_constraintTop_toBottomOf="@+id/sdvGif"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        <com.facebook.drawee.view.SimpleDraweeView
-                android:id="@+id/sdvGif"
-                android:padding="@dimen/spacing_normal"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-
-        <TextView
-                android:id="@+id/tvBasic"
-                android:textSize="@dimen/font_large"
-                android:textStyle="bold"
-                android:text="@string/tvBasic_text"
-                android:textColor="@color/blue_bright"
-                app:layout_constraintTop_toBottomOf="@+id/sdvGif"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+            android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
