@@ -2,10 +2,10 @@ package com.mor.trieuvd.basic.uis.main
 
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.View
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import retrofit2.Callback
 
 import com.mor.trieuvd.basic.R
@@ -20,50 +20,32 @@ import retrofit2.Response
 
 class MainActivity : BaseActivity() {
 
+    private lateinit var viewModel: MainViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         customToolbar()
-        getData()
+
+        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
+        viewModel.getUser().observe(this, Observer<User> { user ->
+            initUI(user)
+        })
     }
-
-    private fun customToolbar() {
-        setSupportActionBar(toobar)
-        val actionBar = supportActionBar
-        actionBar?.let {
-            it.title = getString(R.string.title_home)
-            it.setDisplayHomeAsUpEnabled(true)
-            it.setHomeAsUpIndicator(R.drawable.ic_back)
-        }
-    }
-
-
-    private fun getData() {
-            val call = RestClient.restClient.create(APIs::class.java).getUser
-            call.enqueue(object : Callback<User> {
-                override fun onFailure(call: Call<User>, t: Throwable) {
-                    Log.e("CHECKDATA", "that bai" + t.message + " " + t.cause)
-                }
-                override fun onResponse(call: Call<User>, response: Response<User>) {
-                    Log.e("CHECKDATA", "thanh cong")
-                    val user = response.body()
-                    initUI(user)
-                }
-            })
-    }
-
 
     private fun initUI(user: User?) {
         //set avatar
+        Log.e("TEST_NULL", "data not exist")
         user?.let {
-            sdvAvatar.setImageURI(Uri.parse(user?.avatarUrl), this)
-            tvName.text = user?.name
-            tvType.text = user?.type
-            tvLocation.text = user?.location
-            tvIndexRepos.text = user?.publicRepos.toString()
-            tvIndexGithub.text = user?.publicGists.toString()
-            tvIndexFllower.text = user?.followers.toString()
-            tvIndexFllowing.text = user?.following.toString()
+            Log.e("TEST_NULL", "data exist")
+            sdvAvatar.setImageURI(Uri.parse(it.avatarUrl), this)
+            tvName.text = it.name
+            tvType.text = it.type
+            tvLocation.text = it.location
+            tvIndexRepos.text = it.publicRepos.toString()
+            tvIndexGithub.text = it.publicGists.toString()
+            tvIndexFllower.text = it.followers.toString()
+            tvIndexFllowing.text = it.following.toString()
         }
         btShowAllFollowers.setOnClickListener {
             intent = Intent(this, FollowersActivity::class.java)

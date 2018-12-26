@@ -15,11 +15,10 @@ import org.greenrobot.eventbus.ThreadMode
 import org.greenrobot.eventbus.Subscribe
 
 
-
 class TermOfUseActivity : AppCompatActivity(), View.OnClickListener {
 
     override fun onClick(v: View?) {
-        when(v?.id) {
+        when (v?.id) {
             R.id.clAgree -> {
                 var dialog = TermDialog(this)
                 dialog.show()

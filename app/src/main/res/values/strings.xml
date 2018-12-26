@@ -30,4 +30,6 @@
         approaches of human-computer interaction (HCI); others treat interface and/or product design as the source for
         "User Experience," while still others let marketing or IT drive it.
     </string>
+
+    <string name="title_followers">Followers</string>
 </resources>
