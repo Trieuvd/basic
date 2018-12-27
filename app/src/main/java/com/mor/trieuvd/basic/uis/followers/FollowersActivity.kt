@@ -18,16 +18,20 @@ class FollowersActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_followers)
         customToolbar()
-        viewModel = ViewModelProviders.of(this).get(FollowersViewModel::class.java)
-        viewModel.getFollowers().observe(this, Observer<List<User>> { followers ->
-            followers?.let {
-                val adapterFollowers = FollowersAdapter(this, it)
-                rvFollowers.apply {
-                    setHasFixedSize(true)
-                    layoutManager = LinearLayoutManager(this@FollowersActivity)
-                    adapter = adapterFollowers
+        viewModel = ViewModelProviders.of(this).get(FollowersViewModel::class.java)?.apply {
+            followers.observe(this@FollowersActivity, Observer { result ->
+                result?.let {
+                    val adapterFollowers = FollowersAdapter(this@FollowersActivity, it)
+                    rvFollowers.apply {
+                        setHasFixedSize(true)
+                        layoutManager = LinearLayoutManager(this@FollowersActivity)
+                        adapter = adapterFollowers
+                    }
                 }
-            }
-        })
+            })
+        }
+        viewModel?.setContext(this)
+
+        viewModel.saveUser()
     }
 }
