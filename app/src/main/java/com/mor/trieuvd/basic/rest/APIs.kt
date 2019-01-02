@@ -9,5 +9,5 @@ interface APIs {
     val getUser: Call<User>
 
     @get:GET("octocat/followers")
-    val getFollowers: Call<List<User>>
+    val getFollowers: Call<MutableList<User>>
 }

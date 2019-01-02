@@ -9,7 +9,7 @@ import com.mor.trieuvd.basic.R
 import com.mor.trieuvd.basic.model.User
 import kotlinx.android.synthetic.main.item_follower.view.*
 
-class FollowersAdapter(private val context: Context, private val listFollowers: List<User>) :
+class FollowersAdapter(private val context: Context, private val listFollowers: MutableList<User>) :
     RecyclerView.Adapter<FollowersAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -20,6 +20,10 @@ class FollowersAdapter(private val context: Context, private val listFollowers: 
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(listFollowers[position])
+        holder.llDelFollower.setOnClickListener {
+            listFollowers.removeAt(position)
+            notifyDataSetChanged()
+        }
     }
 
     override fun getItemCount(): Int {
@@ -30,6 +34,7 @@ class FollowersAdapter(private val context: Context, private val listFollowers: 
         private val sdvAvatar = itemView.sdvAvatar
         private val tvLogin = itemView.tvLogin
         private val tvNodeID = itemView.tvNodeID
+        val llDelFollower = itemView.llDelFollower!!
 
         fun bind(user: User) {
             user?.let {

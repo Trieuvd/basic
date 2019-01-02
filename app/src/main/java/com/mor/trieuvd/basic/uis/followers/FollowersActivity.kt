@@ -2,6 +2,7 @@ package com.mor.trieuvd.basic.uis.followers
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,9 +19,32 @@ class FollowersActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_followers)
         customToolbar()
+        getData()
+        viewModel?.setContext(this)
+        srlFollowers.setOnRefreshListener {
+            viewModel?.apply {
+                loadFollowers()
+                checkInternet.observe(this@FollowersActivity, Observer { check ->
+                    check!!.let {
+                        if (!it) {
+                            rvFollowers.visibility = View.GONE
+                            tvMesNoInternet.visibility = View.VISIBLE
+                        }
+                    }
+                })
+            }
+
+            srlFollowers.isRefreshing = false
+        }
+
+    }
+
+    private fun getData() {
         viewModel = ViewModelProviders.of(this).get(FollowersViewModel::class.java)?.apply {
             followers.observe(this@FollowersActivity, Observer { result ->
                 result?.let {
+                    rvFollowers.visibility = View.VISIBLE
+                    tvMesNoInternet.visibility = View.GONE
                     val adapterFollowers = FollowersAdapter(this@FollowersActivity, it)
                     rvFollowers.apply {
                         setHasFixedSize(true)
@@ -29,9 +53,7 @@ class FollowersActivity : BaseActivity() {
                     }
                 }
             })
-        }
-        viewModel?.setContext(this)
 
-        viewModel.saveUser()
+        }
     }
 }

@@ -6,9 +6,8 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
-
-@Entity
-class User : Serializable {
+@Entity(tableName = "followers")
+class User {
 
     @ColumnInfo(name = "login")
     @SerializedName("login")
@@ -102,15 +101,15 @@ class User : Serializable {
     @ColumnInfo(name = "email")
     @SerializedName("email")
     @Expose
-    var email: Any? = null
+    var email: String? = null
     @ColumnInfo(name = "hireable")
     @SerializedName("hireable")
     @Expose
-    var hireable: Any? = null
+    var hireable: String? = null
     @ColumnInfo(name = "bio")
     @SerializedName("bio")
     @Expose
-    var bio: Any? = null
+    var bio: String? = null
     @ColumnInfo(name = "public_repos")
     @SerializedName("public_repos")
     @Expose
